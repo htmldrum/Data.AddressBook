@@ -2,8 +2,15 @@ module Main where
 
 import Prelude
 import Control.Monad.Eff (Eff)
-import Control.Monad.Eff.Console (CONSOLE, log)
+import Control.Monad.Eff.Console (CONSOLE, logShow)
+import Math (sqrt, pi)
+
+--  Number -> Number -> Number
+diagonal w h = sqrt(w * w + h * h)
+
+--
+
+circleArea r = r * r * pi
 
 main :: forall e. Eff (console :: CONSOLE | e) Unit
-main = do
-  log "Rain today"
+main = logShow (diagonal 3.0 4.0)
